@@ -144,15 +144,16 @@ backup:
 # Ingress configuration
 ingress:
   enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
-    kubernetes.io/ssl-redirect: "true"
+  annotations: {}
+    # For example with nginx ingress controler and cert-manager
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+    # kubernetes.io/ssl-redirect: "true"
   paths:
     - '/'
   hosts:
     - bitwarden.domain.tld  # host
-  tls:
-    - secretName: bitwarden-tls-secret
-      hosts:
-        - bitwarden.domain.tld  # host
+  # tls:
+  #   - secretName: bitwarden-tls-secret
+  #     hosts:
+  #       - bitwarden.domain.tld  # host
